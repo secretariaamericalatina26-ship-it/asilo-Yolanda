@@ -7,61 +7,190 @@
 
 <style>
 body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    background: #F4F7F6;
-    color: #2C2C2C;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f4f7f6;
+  color: #2c2c2c;
 }
 
 /* NAV */
 nav {
-    position: sticky;
-    top: 0;
-    background: #2F5D50;
-    padding: 15px;
-    text-align: center;
-    z-index: 1000;
+  position: sticky;
+  top: 0;
+  background: #2F5D50;
+  padding: 15px;
+  text-align: center;
+  z-index: 1000;
 }
-
 nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 /* HEADER */
 header {
-    background: linear-gradient(135deg, #6FAF9B, #2F5D50);
-    color: white;
-    text-align: center;
-    padding: 120px 20px 60px;
+  background: linear-gradient(135deg, #6FAF9B, #2F5D50);
+  color: white;
+  text-align: center;
+  padding: 120px 20px 60px;
+  position: relative;
 }
 
 /* LOGO IMPACTANTE */
 header img {
-    width: 220px;
-    border-radius: 50%;
-    margin-top: -80px;
-    background: white;
-    padding: 15px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-    
-    animation: aparecer 1s ease;
-    transition: transform 0.3s;
+  width: 220px;
+  border-radius: 50%;
+  background: white;
+  padding: 15px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  position: absolute;
+  top: -90px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s;
 }
-
 header img:hover {
-    transform: scale(1.1);
+  transform: translateX(-50%) scale(1.1);
 }
 
-/* ANIMACIÓN */
-@keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(-40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+header h1 {
+  margin-top: 60px;
+  font-size: 32px;
 }
+
+/* BOTÓN */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #ffffff;
+  color: #2F5D50;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* TARJETAS */
+.card {
+  background: white;
+  margin: 25px auto;
+  padding: 25px;
+  width: 85%;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* GALERÍA */
+.galeria {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.galeria img {
+  width: 30%;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+/* MAPA */
+iframe {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+/* FOOTER */
+footer {
+  background: #2F5D50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* BOTÓN WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px 18px;
+  border-radius: 50%;
+  font-size: 22px;
+  text-decoration: none;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+  <a href="#">Inicio</a>
+  <a href="#nosotros">Nosotros</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<header>
+  <img src="logo.png">
+  <h1>Albergue Yolanda Vargas Dulché A.C.</h1>
+  <p>"Dios ama al que da con alegría"</p>
+  <a class="btn" href="https://wa.me/525535010484">Contáctanos por WhatsApp</a>
+</header>
+
+<section id="nosotros" class="card">
+  <h2>Sobre Nosotros</h2>
+  <p>Somos una organización sin fines de lucro ubicada en Jiutepec, Morelos, dedicada al cuidado integral del adulto mayor, brindando atención digna, amor y respeto las 24 horas del día.</p>
+</section>
+
+<section class="card">
+  <h2>Misión</h2>
+  <p>Brindar atención cálida al adulto mayor, proporcionando alojamiento, alimentación, protección y cuidado integral.</p>
+</section>
+
+<section class="card">
+  <h2>Visión</h2>
+  <p>Ser una organización reconocida en México por su calidad humana y excelencia en el servicio.</p>
+</section>
+
+<section id="servicios" class="card">
+  <h2>Servicios</h2>
+  <ul>
+    <li>Cuidado 24 horas</li>
+    <li>Alimentación</li>
+    <li>Atención médica</li>
+    <li>Terapias ocupacionales</li>
+    <li>Actividades recreativas</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Galería</h2>
+  <div class="galeria">
+    <img src="foto1.jpeg">
+    <img src="foto2.jpeg">
+    <img src="foto3.jpeg">
+  </div>
+</section>
+
+<section id="contacto" class="card">
+  <h2>Contacto</h2>
+  <p>📍 Jiutepec, Morelos Centro</p>
+  <p>📞 5535010484</p>
+  <p>✉️ secretariaamericalatina26@gmail.com</p>
+
+  <!-- MAPA -->
+  <iframe src="https://www.google.com/maps?q=Jiutepec+Morelos&output=embed" height="300"></iframe>
+</section>
+
+<footer>
+  <p>© 2026 Albergue Yolanda Vargas Dulché A.C.</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/525535010484">💬</a>
+
+</body>
+</html>
