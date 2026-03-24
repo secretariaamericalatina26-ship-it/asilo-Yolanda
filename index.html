@@ -8,7 +8,21 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    background: #f5f5f5;
+    background: #f4f6f8;
+}
+
+/* NAV */
+nav {
+    background: #2e7d32;
+    padding: 12px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 /* HEADER */
@@ -20,8 +34,8 @@ header {
 }
 
 header img {
-    width: 130px;
-    border-radius: 12px;
+    width: 120px;
+    border-radius: 10px;
 }
 
 /* BOTÓN */
@@ -31,170 +45,118 @@ header img {
     padding: 12px 25px;
     background: #25D366;
     color: white;
+    border-radius: 8px;
     text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
 }
 
-/* CONTENIDO */
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
-}
-
+/* TARJETAS */
 .card {
     background: white;
+    border-radius: 12px;
     padding: 20px;
-    margin: 20px 0;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    animation: fadeIn 1s ease;
+    margin: 20px auto;
+    width: 85%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 /* GALERÍA */
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
 .galeria img {
-    width: 100%;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.galeria img:hover {
-    transform: scale(1.08);
-}
-
-/* ZOOM */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    padding-top: 60px;
-    left: 0; top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-}
-
-.modal img {
-    display: block;
-    margin: auto;
-    max-width: 90%;
-    max-height: 80%;
-}
-
-.modal:target {
-    display: block;
-}
-
-/* WHATSAPP FLOTANTE */
-.whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    font-size: 24px;
-    padding: 15px;
-    border-radius: 50%;
-    text-decoration: none;
+    width: 30%;
+    border-radius: 10px;
+    margin: 5px;
 }
 
 /* FOOTER */
 footer {
+    background: #2e2e2e;
+    color: white;
     text-align: center;
     padding: 15px;
-    background: #333;
-    color: white;
-}
-
-/* ANIMACIÓN */
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
 }
 </style>
 </head>
 
 <body>
 
+<!-- MENÚ -->
+<nav>
+  <a href="#">Inicio</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<!-- HEADER -->
 <header>
-    <img src="logo.png">
-    <h1>Albergue Yolanda Vargas Dulché A.C.</h1>
-    <p>“Dios ama al que da con alegría”</p>
-    <a class="btn" href="https://wa.me/525535010484">Contáctanos por WhatsApp</a>
+  <img src="logo.png">
+  <h1>Albergue Yolanda Vargas Dulché A.C.</h1>
+  <p>“Dios ama al que da con alegría”</p>
+  <a href="https://wa.me/525535010484" class="btn">Contáctanos por WhatsApp</a>
 </header>
 
-<div class="container">
+<!-- SOBRE NOSOTROS -->
+<div class="card">
+<h2>Sobre Nosotros</h2>
+<p>Somos una organización sin fines de lucro ubicada en Jiutepec, Morelos Centro, dedicada al cuidado integral del adulto mayor, brindando atención digna, amor y respeto las 24 horas del día.</p>
+</div>
 
+<!-- MISIÓN -->
 <div class="card">
 <h2>Misión</h2>
-<p>
-Brindar atención cálida al adulto mayor, proporcionando alojamiento, alimentación, protección y cuidado integral las 24 horas del día, favoreciendo su calidad de vida a través de actividades sociales, físicas, recreativas, espirituales y ocupacionales.
-</p>
+<p>Brindar atención cálida al adulto mayor, proporcionando alojamiento, alimentación, protección y cuidado integral.</p>
 </div>
 
+<!-- VISIÓN -->
 <div class="card">
 <h2>Visión</h2>
-<p>
-Ser una organización reconocida en México por su eficacia y calidad humana en el servicio, con personal comprometido, autosuficiente y apoyada por instituciones nacionales e internacionales.
-</p>
+<p>Ser una organización reconocida en México por su calidad humana y servicio.</p>
 </div>
 
-    <div class="card">
-<h2>Valores</h2>
+<!-- SERVICIOS -->
+<div class="card" id="servicios">
+<h2>Servicios</h2>
 <ul>
-<li><strong>Amor:</strong> Buscamos el bienestar integral del adulto mayor.</li>
-<li><strong>Respeto:</strong> Valoramos su dignidad, derechos y experiencia de vida.</li>
-<li><strong>Paciencia:</strong> Comprendemos sus necesidades con empatía.</li>
-<li><strong>Honestidad:</strong> Actuamos con ética y transparencia.</li>
-<li><strong>Alegría:</strong> Creamos un ambiente positivo y armonioso.</li>
-<li><strong>Diligencia:</strong> Realizamos nuestro trabajo con cuidado y eficiencia.</li>
-<li><strong>Espiritualidad:</strong> Fomentamos el bienestar emocional y espiritual.</li>
+<li>Cuidado 24 horas</li>
+<li>Alimentación</li>
+<li>Atención médica</li>
+<li>Terapias ocupacionales</li>
+<li>Actividades recreativas</li>
 </ul>
 </div>
+
+<!-- GALERÍA -->
 <div class="card">
 <h2>Galería</h2>
 <div class="galeria">
-<a href="#img1"><img src="foto1.jpeg"></a>
-<a href="#img2"><img src="foto2.jpeg"></a>
-<a href="#img3"><img src="foto3.jpeg"></a>
-<a href="#img4"><img src="foto4.jpeg"></a>
+<img src="foto1.jpeg">
+<img src="foto2.jpeg">
+<img src="foto3.jpeg">
+<img src="foto4.jpeg">
 </div>
 </div>
 
-<!-- ZOOM -->
-<div id="img1" class="modal"><img src="foto1.jpeg"></div>
-<div id="img2" class="modal"><img src="foto2.jpeg"></div>
-<div id="img3" class="modal"><img src="foto3.jpeg"></div>
-<div id="img4" class="modal"><img src="foto4.jpeg"></div>
-
+<!-- MAPA -->
 <div class="card">
 <h2>Ubicación</h2>
-<iframe src="https://maps.google.com/maps?q=Jiutepec%20Morelos&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="250"></iframe>
+<iframe src="https://www.google.com/maps?q=Jiutepec+Morelos&output=embed" width="100%" height="300"></iframe>
 </div>
 
-<div class="card">
+<!-- CONTACTO -->
+<div class="card" id="contacto">
 <h2>Contacto</h2>
 <p>📍 Jiutepec, Morelos Centro</p>
 <p>📞 5535010484</p>
 <p>✉️ secretariaamericalatina26@gmail.com</p>
 </div>
 
-</div>
-
+<!-- FOOTER -->
 <footer>
-<p>© 2026 Albergue Yolanda Vargas Dulché A.C.</p>
+© 2026 Albergue Yolanda Vargas Dulché A.C.
 </footer>
-
-<!-- BOTÓN FLOTANTE -->
-<a class="whatsapp" href="https://wa.me/525535010484">💬</a>
 
 </body>
 </html>
