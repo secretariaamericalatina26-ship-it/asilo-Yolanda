@@ -2,11 +2,12 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Albergue Yolanda Vargas Dulché A.C.</title>
 
 <style>
 body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
     background: #F4F7F6;
     color: #2C2C2C;
@@ -14,16 +15,18 @@ body {
 
 /* NAV */
 nav {
+    position: sticky;
+    top: 0;
     background: #2F5D50;
-    padding: 12px;
+    padding: 15px;
     text-align: center;
+    z-index: 1000;
 }
 
 nav a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
-    font-weight: 500;
 }
 
 /* HEADER */
@@ -31,183 +34,9 @@ header {
     background: linear-gradient(135deg, #6FAF9B, #2F5D50);
     color: white;
     text-align: center;
-    padding: 70px 20px;
+    padding: 120px 20px 60px;
 }
 
+/* LOGO IMPACTANTE */
 header img {
-    width: 110px;
-    border-radius: 12px;
-    margin-bottom: 10px;
-}
-
-header h1 {
-    margin: 10px 0;
-    font-size: 32px;
-}
-
-header p {
-    font-style: italic;
-}
-
-/* BOTÓN */
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 28px;
-    background: #2F5D50;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #24463C;
-}
-
-/* SECCIONES */
-.card {
-    background: white;
-    margin: 25px auto;
-    padding: 25px;
-    width: 85%;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-h2 {
-    color: #2F5D50;
-}
-
-/* GALERÍA */
-.galeria {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.galeria img {
-    width: 32%;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.galeria img:hover {
-    transform: scale(1.05);
-}
-
-/* FOOTER */
-footer {
-    background: #2F5D50;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-}
-</style>
-
-</head>
-
-<body>
-
-<!-- NAV -->
-<nav>
-    <a href="#">Inicio</a>
-    <a href="#">Nosotros</a>
-    <a href="#">Servicios</a>
-    <a href="#">Contacto</a>
-</nav>
-
-<!-- HEADER -->
-<header>
-    <img src="logo.png" alt="logo">
-    <h1>Albergue Yolanda Vargas Dulché A.C.</h1>
-    <p>"Dios ama al que da con alegría"</p>
-    <a class="btn" href="https://wa.me/525535010484" target="_blank">Contáctanos por WhatsApp</a>
-</header>
-
-<!-- SOBRE NOSOTROS -->
-<div class="card">
-    <h2>Sobre Nosotros</h2>
-    <p>
-        Somos una organización sin fines de lucro ubicada en Jiutepec, Morelos Centro,
-        dedicada al cuidado integral del adulto mayor, brindando atención digna, amor
-        y respeto las 24 horas del día.
-    </p>
-</div>
-
-<!-- MISIÓN -->
-<div class="card">
-    <h2>Misión</h2>
-    <p>
-        Brindar atención cálida al adulto mayor, proporcionando alojamiento, alimentación,
-        protección y cuidado integral, favoreciendo su calidad de vida a través de actividades
-        sociales, físicas, recreativas y espirituales.
-    </p>
-</div>
-
-<!-- VISIÓN -->
-<div class="card">
-    <h2>Visión</h2>
-    <p>
-        Ser una organización reconocida en México por su calidad humana y excelencia en el servicio,
-        con personal comprometido y apoyo de la comunidad.
-    </p>
-</div>
-
-<!-- VALORES -->
-<div class="card">
-    <h2>Valores</h2>
-    <ul>
-        <li><b>Amor:</b> Bienestar integral del adulto mayor.</li>
-        <li><b>Respeto:</b> Dignidad y derechos de cada persona.</li>
-        <li><b>Paciencia:</b> Atención con empatía.</li>
-        <li><b>Honestidad:</b> Transparencia en nuestro actuar.</li>
-        <li><b>Alegría:</b> Ambiente positivo y armonioso.</li>
-        <li><b>Espiritualidad:</b> Bienestar emocional.</li>
-    </ul>
-</div>
-
-<!-- SERVICIOS -->
-<div class="card">
-    <h2>Servicios</h2>
-    <ul>
-        <li>✔ Cuidado 24 horas</li>
-        <li>✔ Alimentación</li>
-        <li>✔ Atención médica</li>
-        <li>✔ Terapias ocupacionales</li>
-        <li>✔ Actividades recreativas</li>
-    </ul>
-</div>
-
-<!-- GALERÍA -->
-<div class="card">
-    <h2>Galería</h2>
-    <div class="galeria">
-        <img src="foto1.jpeg">
-        <img src="foto2.jpeg">
-        <img src="foto3.jpeg">
-    </div>
-</div>
-
-<!-- CONTACTO -->
-<div class="card">
-    <h2>Contacto</h2>
-    <p>📍 Jiutepec, Morelos Centro</p>
-    <p>📞 5535010484</p>
-    <p>✉ secretariaamericalatina26@gmail.com</p>
-</div>
-
-<!-- FOOTER -->
-<footer>
-    © 2026 Albergue Yolanda Vargas Dulché A.C.
-</footer>
-
-</body>
-</html>
+    width: 
