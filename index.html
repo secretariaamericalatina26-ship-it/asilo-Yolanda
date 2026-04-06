@@ -124,6 +124,23 @@ section{
   <h2>Nosotros</h2>
   <p>Somos una institución comprometida con el bienestar de nuestros residentes, proporcionando atención personalizada, acompañamiento y calidad de vida.</p>
 </section>
+  <button onclick="toggleHistoria()" class="btn-historia">
+    Ver Historia
+  </button>
+
+  <div id="historiaTexto" style="display:none; margin-top:15px;">
+    <h2>Nuestra Historia</h2>
+
+    <p>
+      El Asilo Yolanda nace inspirado en la labor de las Hermanas Auxiliadoras.
+    </p>
+
+    <p>
+      Gracias a la Hermana Angela Morán, quien durante su misión observó que muchos adultos mayores se encontraban solos,
+      surgió la iniciativa de crear este asilo para brindarles cuidado, compañía y una vida digna.
+    </p>
+  </div>
+</section> 
 
 <!-- SERVICIOS -->
 <section id="servicios">
@@ -171,6 +188,16 @@ section{
 <a href="https://wa.me/525529506168" target="_blank" class="whatsapp">
   💬
 </a>
-
+<script>
+function toggleHistoria() {
+  var x = document.getElementById("historiaTexto");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
 </body>
 </html>
+
