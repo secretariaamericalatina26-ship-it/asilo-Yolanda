@@ -75,18 +75,22 @@ section {
 }
 
 /* GALERIA */
-#galeria {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
 }
 
-#galeria img {
-    width: 30%;
-    margin: 10px;
-    border-radius: 10px;
+.galeria img {
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
+.galeria img:hover {
+    transform: scale(1.05);
+}
 /* WHATSAPP */
 .whatsapp {
     position: fixed;
@@ -107,17 +111,47 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.6);
+    animation: fadeIn 0.3s;
 }
 
 .modal-content {
     background: white;
-    padding: 20px;
-    border-radius: 15px;
+    padding: 25px;
+    border-radius: 20px;
     width: 90%;
-    max-width: 400px;
-    margin: 100px auto;
+    max-width: 450px;
+    margin: 80px auto;
     text-align: center;
+    animation: slideUp 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-content img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.cerrar {
+    background: #e74c3c;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* ANIMACIONES */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideUp {
+    from {transform: translateY(50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
 }
 
 .cerrar {
@@ -179,15 +213,14 @@ section {
 <!-- GALERIA -->
 <section id="galeria">
     <h2>Galería</h2>
-
-    <img src="asillo1.jpeg">
-    <img src="asilo2.jpeg">
-    <img src="asilo3.jpeg">
-    <img src="foto1.jpeg">
-    <img src="foto2.jpeg">
-    <img src="foto3.jpeg">
-
-</section>
+<div class="galeria">
+    <img src="asilo1.jpeg" onclick="abrirImagen(this)">
+    <img src="asilo2.jpeg" onclick="abrirImagen(this)">
+    <img src="asilo3.jpeg" onclick="abrirImagen(this)">
+    <img src="foto1.jpeg" onclick="abrirImagen(this)">
+    <img src="foto2.jpeg" onclick="abrirImagen(this)">
+    <img src="foto3.jpeg" onclick="abrirImagen(this)">
+</div>
 
 <!-- CONTACTO -->
 <section id="contacto">
@@ -204,20 +237,28 @@ section {
 </section>
 
 <!-- WHATSAPP -->
-<a class="whatsapp" href="#">💬</a>
+<a href="https://wa.me/521XXXXXXXXXX" class="whatsapp" target="_blank">
+    💬
+</a>
 
 <!-- MODAL HISTORIA -->
 <div id="modalHistoria" class="modal">
     <div class="modal-content">
+
+        <img src="asilo1.jpeg">
+
         <h3>Nuestra Historia</h3>
-<p>El Asilo Yolanda nació con el propósito de brindar un espacio digno, seguro y lleno de amor para nuestros adultos mayores.</p>
 
-<p>Nace inspirado por el deseo de ayudar a los más necesitados del pueblo de Jiutepec.</p>
+        <p>El Asilo Yolanda nació con el propósito de brindar un espacio digno, seguro y lleno de amor para nuestros adultos mayores.</p>
 
-<p>Deseo que surge de la inspiración del carisma al que pertenece la Hermana Angela Moran, Auxiliadoras del Purgatorio.</p>
+        <p>Nace inspirado por el deseo de ayudar a los más necesitados del pueblo de Jiutepec.</p>
 
-<p>Así comenzó el asilo, con el propósito de brindar un hogar lleno de amor, respeto y acompañamiento.</p>
+        <p>Deseo que surge de la inspiración del carisma al que pertenece la Hermana Angela Moran, Auxiliadoras del Purgatorio.</p>
+
+        <p>Así comenzó el asilo, con el propósito de brindar un hogar lleno de amor, respeto y acompañamiento.</p>
+
         <button class="cerrar" onclick="cerrarModal()">Cerrar</button>
+
     </div>
 </div>
 
@@ -230,7 +271,22 @@ function abrirModal() {
 function cerrarModal() {
     document.getElementById("modalHistoria").style.display = "none";
 }
-</script>
+    function abrirImagen(img) {
+    document.getElementById("modalImg").style.display = "block";
+    document.getElementById("imgGrande").src = img.src;
+}
 
+function cerrarImagen() {
+    document.getElementById("modalImg").style.display = "none";
+}
+}
+</script>
+<div id="modalImg" class="modal">
+    <div class="modal-content">
+        <img id="imgGrande" src="">
+        <button class="cerrar" onclick="cerrarImagen()">Cerrar</button>
+    </div>
+</div>
+</div>
 </body>
 </html>
