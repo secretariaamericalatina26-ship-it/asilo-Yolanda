@@ -1,285 +1,228 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <title>Asilo Yolanda</title>
 
 <style>
+
+/* GENERAL */
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #eef2f7;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #eef2f7;
 }
 
 /* HEADER */
 .header {
-  text-align: center;
-  background: linear-gradient(135deg, #6c8ebf, #9fbfe3);
-  padding: 40px 20px;
-  color: white;
+    text-align: center;
+    background: linear-gradient(135deg, #6c8ebf, #9fbfe3);
+    padding: 50px 20px;
+    color: white;
 }
 
 .logo {
-  width: 150px;
-  height: 150px;
-  margin: auto;
-  background: white;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 140px;
+    height: 140px;
+    margin: auto;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 .logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .header h1 {
-  margin-top: 15px;
-  font-size: 28px;
+    margin-top: 15px;
 }
 
-.header p {
-  opacity: 0.9;
+/* CONTENIDO */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
 }
 
-/* NAV */
-nav {
-  background: #1f2f46;
-  padding: 15px;
-  text-align: center;
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-nav a {
-  color: white;
-  margin: 0 20px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #1abc9c;
-}
-
-/* SECCIONES */
-.section {
-  background: white;
-  margin: 25px auto;
-  padding: 25px;
-  border-radius: 20px;
-  max-width: 950px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
-
-.section:hover {
-  transform: translateY(-3px);
-}
-
-/* BOTONES */
 button {
-  background: #1abc9c;
-  color: white;
-  border: none;
-  padding: 12px 18px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #16a085;
-}
-
-/* SERVICIOS */
-ul {
-  padding-left: 20px;
+    background: #1abc9c;
+    border: none;
+    padding: 10px 18px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 /* GALERÍA */
 .galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 15px;
 }
 
 .galeria img {
-  width: 100%;
-  border-radius: 15px;
-  cursor: pointer;
-  transition: 0.3s;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .galeria img:hover {
-  transform: scale(1.05);
-}
-
-/* WHATSAPP */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25d366;
-  color: white;
-  padding: 18px;
-  border-radius: 50%;
-  font-size: 20px;
-  text-decoration: none;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transform: scale(1.05);
 }
 
 /* MODAL */
 .modal {
-  display: none;
-  position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(5px);
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.6);
 }
 
 .modal-content {
-  background: white;
-  margin: 8% auto;
-  padding: 25px;
-  width: 90%;
-  max-width: 550px;
-  border-radius: 20px;
-  text-align: center;
-  animation: fadeIn 0.4s ease;
+    background: white;
+    margin: 8% auto;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 500px;
+    text-align: center;
 }
 
-@keyframes fadeIn {
-  from {opacity:0; transform: translateY(-20px);}
-  to {opacity:1; transform: translateY(0);}
+/* WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
 }
 
-.cerrar {
-  background: #e74c3c;
-  margin-top: 15px;
-}
-
-.cerrar:hover {
-  background: #c0392b;
-}
-
-/* MAPA */
-iframe {
-  border-radius: 15px;
-  margin-top: 10px;
-}
 </style>
-
 </head>
 
 <body>
 
-<header class="header">
-  <div class="logo">
-    <img src="logo.png">
-  </div>
-  <h1>Asilo Yolanda</h1>
-  <p>Cuidado y bienestar para adultos mayores</p>
-</header>
-
-<nav>
-  <a href="#">Inicio</a>
-  <a href="#nosotros">Nosotros</a>
-  <a href="#servicios">Servicios</a>
-  <a href="#galeria">Galería</a>
-  <a href="#contacto">Contacto</a>
-</nav>
-
-<div class="section">
-  <h2>Bienvenidos</h2>
-  <p>En Asilo Yolanda brindamos cuidado, atención y cariño a nuestros adultos mayores, ofreciendo un ambiente digno, seguro y lleno de respeto.</p>
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">
+        <img src="logo.png">
+    </div>
+    <h1>Asilo Yolanda</h1>
+    <p>Cuidado y bienestar para adultos mayores</p>
 </div>
 
-<div class="section" id="nosotros">
-  <h2>Nosotros</h2>
-  <p>Somos una institución comprometida con el bienestar de nuestros residentes.</p>
-  <button onclick="abrirModal()">Ver Historia</button>
+<div class="container">
+
+<!-- BIENVENIDA -->
+<div class="card">
+    <h2>Bienvenidos</h2>
+    <p>En Asilo Yolanda brindamos cuidado, atención y cariño a nuestros adultos mayores.</p>
 </div>
 
-<div class="section" id="servicios">
-  <h2>Servicios</h2>
-  <ul>
-    <li>Atención las 24 horas</li>
-    <li>Alimentación balanceada</li>
-    <li>Actividades recreativas</li>
-    <li>Cuidado médico básico</li>
-    <li>Ambiente familiar</li>
-  </ul>
+<!-- NOSOTROS -->
+<div class="card">
+    <h2>Nosotros</h2>
+    <p>Somos una institución comprometida con el bienestar de nuestros residentes.</p>
+    <button onclick="abrirModal()">Ver Historia</button>
 </div>
 
-<div class="section" id="galeria">
-  <h2>Galería</h2>
-  <div class="galeria">
-    <img src="foto1.jpeg">
-    <img src="foto2.jpeg">
-    <img src="foto3.jpeg">
-    <img src="asillo1.jpeg">
-    <img src="asilo2.jpeg">
-    <img src="asilo3.jpeg">
-  </div>
+<!-- SERVICIOS -->
+<div class="card">
+    <h2>Servicios</h2>
+    <ul>
+        <li>Atención 24 horas</li>
+        <li>Alimentación balanceada</li>
+        <li>Actividades recreativas</li>
+        <li>Cuidado médico básico</li>
+        <li>Ambiente familiar</li>
+    </ul>
 </div>
 
-<div class="section" id="contacto">
-  <h2>Contacto</h2>
-  <p>📞 Teléfono: 555-123-4567</p>
-  <p>📍 Dirección: Jiutepec, Morelos Centro</p>
-
-  <iframe 
-    src="https://maps.google.com/maps?q=Jiutepec%20Morelos%20Centro&t=&z=13&ie=UTF8&iwloc=&output=embed"
-    width="100%" height="250">
-  </iframe>
+<!-- GALERÍA -->
+<div class="card">
+    <h2>Galería</h2>
+    <div class="galeria">
+        <img src="asillo1.jpeg" onclick="verImagen(this)">
+        <img src="asilo2.jpeg" onclick="verImagen(this)">
+        <img src="asilo3.jpeg" onclick="verImagen(this)">
+        <img src="foto1.jpeg" onclick="verImagen(this)">
+        <img src="foto2.jpeg" onclick="verImagen(this)">
+        <img src="foto3.jpeg" onclick="verImagen(this)">
+    </div>
 </div>
 
+<!-- MAPA -->
+<div class="card">
+    <h2>Ubicación</h2>
+    <iframe 
+    src="https://www.google.com/maps?q=Jiutepec+Morelos+Centro&output=embed"
+    width="100%" height="250" style="border:0;"></iframe>
+</div>
+
+</div>
+
+<!-- MODAL HISTORIA -->
+<div id="modalHistoria" class="modal">
+    <div class="modal-content">
+        <h3>Nuestra Historia</h3>
+        <p>El Asilo Yolanda nació con el propósito de brindar un espacio digno, seguro y lleno de amor para nuestros adultos mayores.</p>
+        <p>Nace inspirado por el deseo de ayudar a los más necesitados del pueblo de Jiutepec.</p>
+        <p>Inspirado por el carisma de la Hermana Angela Moran, Auxiliadoras del Purgatorio.</p>
+        <p>Así comenzó este hogar lleno de amor, respeto y acompañamiento.</p>
+        <button onclick="cerrarModal()">Cerrar</button>
+    </div>
+</div>
+
+<!-- MODAL IMAGEN -->
+<div id="modalImg" class="modal">
+    <div class="modal-content">
+        <img id="imgGrande" style="width:100%">
+        <br><br>
+        <button onclick="cerrarImagen()">Cerrar</button>
+    </div>
+</div>
+
+<!-- WHATSAPP -->
 <a href="https://wa.me/5210000000000" class="whatsapp" target="_blank">💬</a>
 
-<!-- MODAL -->
-
-<div id="modalHistoria" class="modal">
-  <div class="modal-content">
-
-```
-<h3>Nuestra Historia</h3>
-
-<p>El Asilo Yolanda nació con el propósito de brindar un espacio digno, seguro y lleno de amor para nuestros adultos mayores.</p>
-
-<p>Nace inspirado por el deseo de ayudar a los más necesitados del pueblo de Jiutepec.</p>
-
-<p>Deseo que surge de la inspiración del carisma al que pertenece la Hermana Angela Moran, Auxiliadoras del Purgatorio.</p>
-
-<p>Así comenzó el asilo, con el propósito de brindar un hogar lleno de amor, respeto y acompañamiento.</p>
-
-<button class="cerrar" onclick="cerrarModal()">Cerrar</button>
-```
-
-  </div>
-</div>
-
 <script>
-function abrirModal() {
-  document.getElementById("modalHistoria").style.display = "block";
+
+function abrirModal(){
+    document.getElementById("modalHistoria").style.display="block";
 }
 
-function cerrarModal() {
-  document.getElementById("modalHistoria").style.display = "none";
+function cerrarModal(){
+    document.getElementById("modalHistoria").style.display="none";
 }
 
-window.onclick = function(event) {
-  let modal = document.getElementById("modalHistoria");
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
+function verImagen(img){
+    document.getElementById("modalImg").style.display="block";
+    document.getElementById("imgGrande").src = img.src;
 }
+
+function cerrarImagen(){
+    document.getElementById("modalImg").style.display="none";
+}
+
 </script>
 
 </body>
