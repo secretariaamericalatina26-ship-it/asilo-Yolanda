@@ -4,17 +4,14 @@
 <meta charset="UTF-8">
 <title>Asilo Yolanda</title>
 
-<!-- TIPOGRAFÍA -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* GENERAL */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: #f4f7fb;
-    color: #333;
 }
 
 /* HEADER */
@@ -37,29 +34,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
-}
-
-.logo:hover {
-    transform: scale(1.05);
 }
 
 .logo img {
     width: 105%;
     height: 105%;
     object-fit: cover;
-    object-position: center;
-}
-
-/* TITULOS */
-.header h1 {
-    margin: 10px 0 5px;
-    font-size: 28px;
-}
-
-.header p {
-    margin: 0;
-    opacity: 0.9;
 }
 
 /* NAV */
@@ -73,12 +53,6 @@ nav a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #1abc9c;
 }
 
 /* SECCIONES */
@@ -88,32 +62,34 @@ section {
     padding: 25px;
     background: white;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
 }
 
-section:hover {
-    transform: translateY(-3px);
-}
-
-section h2 {
-    margin-top: 0;
-    color: #2c3e50;
-}
-
-/* BOTONES */
+/* BOTON */
 .btn {
     background: #1abc9c;
     color: white;
-    border: none;
     padding: 10px 18px;
     border-radius: 8px;
+    border: none;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-.btn:hover {
-    background: #16a085;
+/* GALERIA PRO */
+#galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#galeria img {
+    width: 30%;
+    margin: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+#galeria img:hover {
+    transform: scale(1.05);
 }
 
 /* WHATSAPP */
@@ -126,8 +102,6 @@ section h2 {
     padding: 15px;
     border-radius: 50%;
     text-decoration: none;
-    font-size: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 </style>
@@ -138,7 +112,7 @@ section h2 {
 <!-- HEADER -->
 <div class="header">
     <div class="logo">
-        <img src="logo.png" alt="Logo">
+        <img src="logo.png">
     </div>
     <h1>Asilo Yolanda</h1>
     <p>Cuidado y bienestar para adultos mayores</p>
@@ -153,17 +127,17 @@ section h2 {
     <a href="#contacto">Contacto</a>
 </nav>
 
-<!-- BIENVENIDA -->
+<!-- BIENVENIDOS -->
 <section id="inicio">
     <h2>Bienvenidos</h2>
-    <p>En Asilo Yolanda brindamos cuidado, atención y cariño a nuestros adultos mayores, ofreciendo un ambiente seguro, digno y lleno de respeto.</p>
+    <p>En Asilo Yolanda brindamos cuidado, atención y cariño a nuestros adultos mayores.</p>
 </section>
 
 <!-- NOSOTROS -->
 <section id="nosotros">
     <h2>Nosotros</h2>
-    <p>Somos una institución comprometida con el bienestar de nuestros residentes, proporcionando atención personalizada, acompañamiento y calidad de vida.</p>
-    <button class="btn">Ver Historia</button>
+    <p>Somos una institución comprometida con el bienestar de nuestros residentes.</p>
+    <button class="btn" onclick="mostrarHistoria()">Ver Historia</button>
 </section>
 
 <!-- SERVICIOS -->
@@ -178,21 +152,43 @@ section h2 {
     </ul>
 </section>
 
-<!-- GALERIA -->
+<!-- GALERIA (6 IMÁGENES) -->
 <section id="galeria">
     <h2>Galería</h2>
-    <p>Próximamente podrás ver imágenes de nuestras instalaciones.</p>
+
+    <img src="asillo1.jpeg">
+    <img src="asilo2.jpeg">
+    <img src="asilo3.jpeg">
+    <img src="foto1.jpeg">
+    <img src="foto2.jpeg">
+    <img src="foto3.jpeg">
+
 </section>
 
 <!-- CONTACTO -->
 <section id="contacto">
     <h2>Contacto</h2>
     <p>📞 Teléfono: 555-123-4567</p>
-    <p>📍 Dirección: Tu dirección aquí</p>
+    <p>📍 Dirección: Ciudad de México</p>
+
+    <iframe 
+        src="https://www.google.com/maps?q=Ciudad+de+Mexico&output=embed"
+        width="100%" 
+        height="250"
+        style="border-radius:10px;">
+    </iframe>
+
 </section>
 
-<!-- BOTON WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/5210000000000" target="_blank">💬</a>
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/5210000000000">💬</a>
+
+<!-- SCRIPT -->
+<script>
+function mostrarHistoria() {
+    alert("Asilo Yolanda nace con el objetivo de brindar amor, cuidado y dignidad a nuestros adultos mayores.");
+}
+</script>
 
 </body>
 </html>
