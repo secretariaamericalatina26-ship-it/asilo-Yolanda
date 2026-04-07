@@ -19,11 +19,21 @@ body {
 }
 
 .logo {
-  width: 110px;
-  background: white;
-  padding: 10px;
-  border-radius: 50%;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    width: 140px;
+    height: 140px; /* 👈 esto faltaba */
+    background: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin: 0 auto;
+    overflow: hidden; /* 👈 MUY IMPORTANTE */
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 👈 esto arregla el recorte */
+}
 }
 
 .header h1 {
@@ -120,7 +130,9 @@ section {
 
 <!-- HEADER -->
 <div class="header">
-  <img src="logo.png" class="logo">
+<div class="logo">
+<img src="logo.png" alt="Logo">
+</div>
   <h1>Asilo Yolanda</h1>
   <p>Cuidado y bienestar para adultos mayores</p>
 </div>
