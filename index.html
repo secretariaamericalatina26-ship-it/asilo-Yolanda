@@ -7,6 +7,10 @@
 <style>
 
 /* GENERAL */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -16,8 +20,8 @@ body {
 /* HEADER */
 .header {
     text-align: center;
-    background: linear-gradient(135deg, #5f7fa8, #8fb3d9);
-    padding: 60px 20px;
+    background: linear-gradient(135deg, #4facfe, #00c6ff);
+    padding: 50px 20px;
     color: white;
 }
 
@@ -40,6 +44,81 @@ body {
 .header h1 {
     margin-top: 15px;
 }
+
+.header p {
+    opacity: 0.9;
+}
+
+/* CONTENIDO */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* TARJETAS */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid #1abc9c;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+/* GALERIA GRID */
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.grid-galeria img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.grid-galeria img:hover {
+    transform: scale(1.05);
+}
+/* BOTONES */
+button {
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* GALERIA */
+.galeria img {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+/* CONTACTO LADO A LADO */
 .contenedor-contacto {
     display: flex;
     gap: 20px;
@@ -50,101 +129,30 @@ body {
     flex: 1;
     min-width: 300px;
 }
-/* CONTENIDO */
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
+
+/* ANIMACIONES */
+.animado {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
 }
 
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 18px;
-    margin-bottom: 25px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    transition: all 0.3s ease;
-    border-left: 5px solid #1abc9c;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-}
-
-button {
-    background: linear-gradient(135deg, #1abc9c, #16a085);
-    color: white;
-    border: none;
-    padding: 14px 20px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 15px;
-    transition: all 0.3s ease;
-    margin-top: 10px;
-}
-
-button:hover {
-    transform: scale(1.07);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-/* GALERÍA */
-.galeria img {
-    width: 100%;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.4s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-}
-
-.galeria img:hover {
-    transform: scale(1.08);
-}
-
-/* MODAL */
-.modal {
-    display: none;
-    position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.6);
-}
-
-.modal-content {
-    background: white;
-    margin: 6% auto;
-    padding: 30px;
-    border-radius: 18px;
-    max-width: 500px;
-    text-align: center;
-    animation: aparecer 0.3s ease;
-}
-
-@keyframes aparecer {
-    from {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
+.mostrar {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* WHATSAPP */
-.whatsapp {
+.whatsapp-float {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #25d366;
+    background: #25D366;
     color: white;
+    font-size: 24px;
     padding: 15px;
     border-radius: 50%;
     text-decoration: none;
-    font-size: 20px;
 }
 
 </style>
@@ -163,123 +171,105 @@ button:hover {
 
 <div class="container">
 
-<!-- BIENVENIDA -->
-<div class="card">
-    <h2>Bienvenidos</h2>
-    <p>En Asilo Yolanda brindamos cuidado, atención y cariño a nuestros adultos mayores.</p>
-</div>
-
-<!-- NOSOTROS -->
-<div class="card">
-    <h2>Nosotros</h2>
-    <p>Somos una institución comprometida con el bienestar de nuestros residentes.</p>
-    <button onclick="abrirModal()">Ver Historia</button>
-</div>
-
-<!-- SERVICIOS -->
-<div class="card">
-    <h2>Servicios</h2>
-    <ul>
-        <li>Atención 24 horas</li>
-        <li>Alimentación balanceada</li>
-        <li>Actividades recreativas</li>
-        <li>Cuidado médico básico</li>
-        <li>Ambiente familiar</li>
-    </ul>
-</div>
-
-<!-- GALERÍA -->
-<div class="card">
-    <h2>Galería</h2>
-    <div class="galeria">
-        <img src="asillo1.jpeg" onclick="verImagen(this)">
-        <img src="asilo2.jpeg" onclick="verImagen(this)">
-        <img src="asilo3.jpeg" onclick="verImagen(this)">
-        <img src="foto1.jpeg" onclick="verImagen(this)">
-        <img src="foto2.jpeg" onclick="verImagen(this)">
-        <img src="foto3.jpeg" onclick="verImagen(this)">
-    </div>
-</div>
-
-<!-- MAPA -->
-<div class="card">
-    <h2>Ubicación</h2>
-    <iframe 
-    src="https://www.google.com/maps?q=Jiutepec+Morelos+Centro&output=embed"
-    width="100%" height="250" style="border:0;"></iframe>
-</div>
-
-<!-- CONTACTO -->
-<div class="contenedor-contacto">
-
-    <div class="card">
-        <h2>Ubicación</h2>
-        <iframe 
-        src="https://www.google.com/maps?q=Jiutepec+Morelos+Centro&output=embed"
-        width="100%" height="250" style="border:0;"></iframe>
+    <!-- BIENVENIDA -->
+    <div class="card animado">
+        <h2>Bienvenidos</h2>
+        <p>En Asilo Yolanda brindamos cuidado, atención y cariño a nuestros adultos mayores.</p>
     </div>
 
-    <div class="card">
-<h2>Contacto</h2>
-
-<p><strong>📞 Teléfono:</strong><br>5529506168</p>
-
-<p><strong>📍 Dirección:</strong><br>
-Jiutepec, Morelos Centro</p>
-
-<p><strong>✉️ Email:</strong><br>
-asiloydsecretaria@gmail.com</p>
-
-        <button onclick="window.open('https://wa.me/5215529506168')">
-            Contactar por WhatsApp
+    <!-- NOSOTROS -->
+    <div class="card animado">
+        <h2>Nosotros</h2>
+        <p>Somos una institución comprometida con el bienestar de nuestros residentes.</p>
+        <button onclick="document.getElementById('modalHistoria').style.display='block'">
+            Ver Historia
         </button>
+    </div>
+
+    <!-- SERVICIOS -->
+    <div class="card animado">
+        <h2>Servicios</h2>
+        <ul>
+            <li>Atención 24 horas</li>
+            <li>Alimentación balanceada</li>
+            <li>Actividades recreativas</li>
+            <li>Cuidado médico básico</li>
+        </ul>
+    </div>
+
+    <!-- GALERIA -->
+   <div class="card galeria animado">
+    <h2>Galería</h2>
+
+    <div class="grid-galeria">
+        <img src="asillo1.jpeg">
+        <img src="asilo2.jpeg">
+        <img src="asilo3.jpeg">
+        <img src="foto1.jpeg">
+        <img src="foto2.jpeg">
+        <img src="foto3.jpeg">
+    </div>
+</div>
+
+    <!-- CONTACTO + UBICACION -->
+    <div class="contenedor-contacto">
+
+        <div class="card animado">
+            <h2>Ubicación</h2>
+            <iframe 
+            src="https://www.google.com/maps?q=Jiutepec+Morelos+Centro&output=embed"
+            width="100%" height="250" style="border:0;"></iframe>
+        </div>
+
+        <div class="card animado">
+            <h2>Contacto</h2>
+
+            <p><strong>📞 Teléfono:</strong><br>5529506168</p>
+            <p><strong>📍 Dirección:</strong><br>Jiutepec, Morelos Centro</p>
+            <p><strong>✉️ Email:</strong><br>asiloydsecretaria@gmail.com</p>
+
+            <button onclick="window.open('https://wa.me/5215529506168')">
+                Contactar por WhatsApp
+            </button>
+        </div>
+
     </div>
 
 </div>
 
 <!-- MODAL HISTORIA -->
-<div id="modalHistoria" class="modal">
-    <div class="modal-content">
+<div id="modalHistoria" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6);">
+    <div style="background:white; margin:10% auto; padding:20px; width:90%; max-width:400px; border-radius:15px; text-align:center;">
         <h3>Nuestra Historia</h3>
-        <p>El Asilo Yolanda nació con el propósito de brindar un espacio digno, seguro y lleno de amor para nuestros adultos mayores.</p>
-        <p>Nace inspirado por el deseo de ayudar a los más necesitados del pueblo de Jiutepec.</p>
-        <p>Inspirado por el carisma de la Hermana Angela Moran, Auxiliadoras del Purgatorio.</p>
-        <p>Así comenzó este hogar lleno de amor, respeto y acompañamiento.</p>
-        <button onclick="cerrarModal()">Cerrar</button>
-    </div>
-</div>
-
-<!-- MODAL IMAGEN -->
-<div id="modalImg" class="modal">
-    <div class="modal-content">
-        <img id="imgGrande" style="width:100%">
-        <br><br>
-        <button onclick="cerrarImagen()">Cerrar</button>
+        <p>
+        El Asilo Yolanda nació con el propósito de brindar un espacio digno, seguro y lleno de amor para nuestros adultos mayores...
+        </p>
+        <button onclick="document.getElementById('modalHistoria').style.display='none'">
+            Cerrar
+        </button>
     </div>
 </div>
 
 <!-- WHATSAPP -->
-<a href="https://wa.me/5210000000000" class="whatsapp" target="_blank">💬</a>
+<a href="https://wa.me/5215529506168" class="whatsapp-float" target="_blank">
+💬
+</a>
 
+<!-- SCRIPT ANIMACION -->
 <script>
+const elementos = document.querySelectorAll('.animado');
 
-function abrirModal(){
-    document.getElementById("modalHistoria").style.display="block";
+function mostrarElementos() {
+    elementos.forEach(el => {
+        const pos = el.getBoundingClientRect().top;
+        if (pos < window.innerHeight - 100) {
+            el.classList.add('mostrar');
+        }
+    });
 }
 
-function cerrarModal(){
-    document.getElementById("modalHistoria").style.display="none";
-}
-
-function verImagen(img){
-    document.getElementById("modalImg").style.display="block";
-    document.getElementById("imgGrande").src = img.src;
-}
-
-function cerrarImagen(){
-    document.getElementById("modalImg").style.display="none";
-}
-
+window.addEventListener('scroll', mostrarElementos);
+window.addEventListener('load', mostrarElementos);
 </script>
 
 </body>
