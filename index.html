@@ -88,7 +88,7 @@ button {
     flex: 1;
 }
 
-/* MODAL PREMIUM */
+/* MODAL HISTORIA */
 .modal {
     display: none;
     position: fixed;
@@ -128,15 +128,38 @@ button {
     margin-bottom: 15px;
 }
 
+/* MODAL IMAGEN */
+.modal-img-view {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-img-view img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 15px;
+}
+
+.modal-img-view span {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
 @keyframes aparecer {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 </style>
 </head>
@@ -154,20 +177,17 @@ button {
 
 <div class="container">
 
-<!-- BIENVENIDOS -->
 <div class="card">
     <h2>Bienvenidos</h2>
     <p>En Asilo Yolanda brindamos cuidado, atención y cariño a nuestros adultos mayores.</p>
 </div>
 
-<!-- NOSOTROS -->
 <div class="card">
     <h2>Nosotros</h2>
     <p>Somos una institución comprometida con el bienestar de nuestros residentes.</p>
     <button onclick="abrirModal()">Ver Historia</button>
 </div>
 
-<!-- SERVICIOS -->
 <div class="card">
     <h2>Servicios</h2>
     <ul>
@@ -178,20 +198,18 @@ button {
     </ul>
 </div>
 
-<!-- GALERIA -->
 <div class="card">
     <h2>Galería</h2>
     <div class="grid-galeria">
-        <img src="asillo1.jpeg">
-        <img src="asilo2.jpeg">
-        <img src="asilo3.jpeg">
-        <img src="foto1.jpeg">
-        <img src="foto2.jpeg">
-        <img src="foto3.jpeg">
+        <img src="asillo1.jpeg" onclick="verImagen(this)">
+        <img src="asilo2.jpeg" onclick="verImagen(this)">
+        <img src="asilo3.jpeg" onclick="verImagen(this)">
+        <img src="foto1.jpeg" onclick="verImagen(this)">
+        <img src="foto2.jpeg" onclick="verImagen(this)">
+        <img src="foto3.jpeg" onclick="verImagen(this)">
     </div>
 </div>
 
-<!-- CONTACTO -->
 <div class="contacto">
     <div class="card">
         <h2>Ubicación</h2>
@@ -209,10 +227,10 @@ button {
 
 </div>
 
-<!-- MODAL -->
+<!-- MODAL HISTORIA -->
 <div id="modalHistoria" class="modal">
   <div class="modal-premium">
-    <img src="foto2.jpeg" class="modal-img">
+    <img src="foto1.jpeg" class="modal-img">
 
     <h2>Nuestra Historia</h2>
 
@@ -228,6 +246,12 @@ button {
   </div>
 </div>
 
+<!-- MODAL IMAGEN -->
+<div id="modalImagen" class="modal-img-view">
+    <span onclick="cerrarImagen()">&times;</span>
+    <img id="imagenGrande">
+</div>
+
 <script>
 function abrirModal() {
     document.getElementById("modalHistoria").style.display = "flex";
@@ -235,6 +259,15 @@ function abrirModal() {
 
 function cerrarModal() {
     document.getElementById("modalHistoria").style.display = "none";
+}
+
+function verImagen(img) {
+    document.getElementById("modalImagen").style.display = "flex";
+    document.getElementById("imagenGrande").src = img.src;
+}
+
+function cerrarImagen() {
+    document.getElementById("modalImagen").style.display = "none";
 }
 </script>
 
