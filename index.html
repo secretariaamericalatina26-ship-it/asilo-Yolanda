@@ -10,7 +10,9 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background: #eef2f7;
 }
-
+h2 {
+    color: #2c3e50;
+}
 /* HEADER */
 .header {
     text-align: center;
@@ -46,17 +48,27 @@ h1 {
     padding: 25px;
     border-radius: 18px;
     margin-bottom: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: 0.3s;
 }
 
+.card:hover {
+    transform: translateY(-5px);
+}
 /* BOTONES */
 button {
     background: linear-gradient(135deg, #1abc9c, #16a085);
     color: white;
     border: none;
-    padding: 10px 18px;
-    border-radius: 10px;
+    padding: 12px 20px;
+    border-radius: 12px;
     cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: scale(1.05);
 }
 
 /* GALERIA */
@@ -73,14 +85,12 @@ button {
     height: 180px;
     object-fit: cover;
     border-radius: 15px;
-    cursor: pointer;
     transition: 0.3s;
 }
 
 .grid-galeria img:hover {
     transform: scale(1.05);
 }
-
 /* CONTACTO */
 .contacto {
     display: flex;
