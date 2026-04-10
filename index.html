@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Asilo Yolanda</title>
- 
 
 <style>
 body {
@@ -19,6 +18,7 @@ body {
     padding: 60px 20px;
     color: white;
 }
+
 h1 {
   font-size: 38px;
   margin-top: 10px;
@@ -32,7 +32,6 @@ h1 {
 
 .logo img {
   width: 100%;
-  height: auto;
 }
 
 /* CONTENIDO */
@@ -91,46 +90,6 @@ button {
     flex: 1;
 }
 
-/* MODAL HISTORIA */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(6px);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-premium {
-    background: white;
-    width: 90%;
-    max-width: 500px;
-    border-radius: 20px;
-    padding: 25px;
-    text-align: center;
-    animation: aparecer 0.4s ease;
-    max-height: 85vh;
-    overflow-y: auto;
-}
-
-.modal-premium p {
-    text-align: justify;
-    line-height: 1.6;
-}
-
-.modal-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 15px;
-    margin-bottom: 15px;
-}
-
 /* MODAL IMAGEN */
 .modal-img-view {
     display: none;
@@ -159,21 +118,15 @@ button {
     color: white;
     cursor: pointer;
 }
-
-@keyframes aparecer {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
     <div class="logo">
-    <img src="Logo1.png">
-</div>
+        <img src="Logo1.png">
+    </div>
     <h1>Asilo Yolanda</h1>
     <p>Cuidado y bienestar para adultos mayores</p>
 </div>
@@ -188,7 +141,11 @@ button {
 <div class="card">
     <h2>Nosotros</h2>
     <p>Somos una institución comprometida con el bienestar de nuestros residentes.</p>
-    <button onclick="abrirModal()">Ver Historia</button>
+
+    <!-- BOTÓN NUEVO -->
+    <a href="historia.html">
+        <button>Ver Historia</button>
+    </a>
 </div>
 
 <div class="card">
@@ -197,7 +154,7 @@ button {
         <li>Atención 24 horas</li>
         <li>Alimentación balanceada</li>
         <li>Actividades recreativas</li>
-        <li>Cuidado y Acompañamiento con calidez</li>
+        <li>Cuidado y acompañamiento con calidez</li>
     </ul>
 </div>
 
@@ -230,25 +187,6 @@ button {
 
 </div>
 
-<!-- MODAL HISTORIA -->
-<div id="modalHistoria" class="modal">
-  <div class="modal-premium">
-    <img src="foto2.jpeg" class="modal-img">
-
-    <h2>Nuestra Historia</h2>
-
-    <p>El Asilo Yolanda nació con el propósito de brindar un espacio digno, seguro y lleno de amor para nuestros adultos mayores.</p>
-
-    <p>Nace inspirado por el deseo de ayudar a los más necesitados del pueblo de Jiutepec.</p>
-
-    <p>Este proyecto surge de la inspiración del carisma de la Hermana Ángela Morán.</p>
-
-    <p>Así comenzó este asilo, con el objetivo de ofrecer un hogar lleno de respeto, cuidado y acompañamiento.</p>
-
-    <button onclick="cerrarModal()">Cerrar</button>
-  </div>
-</div>
-
 <!-- MODAL IMAGEN -->
 <div id="modalImagen" class="modal-img-view">
     <span onclick="cerrarImagen()">&times;</span>
@@ -256,14 +194,6 @@ button {
 </div>
 
 <script>
-function abrirModal() {
-    document.getElementById("modalHistoria").style.display = "flex";
-}
-
-function cerrarModal() {
-    document.getElementById("modalHistoria").style.display = "none";
-}
-
 function verImagen(img) {
     document.getElementById("modalImagen").style.display = "flex";
     document.getElementById("imagenGrande").src = img.src;
