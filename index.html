@@ -10,14 +10,38 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background: #eef2f7;
 }
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #2c3e50;
+    padding: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #1abc9c;
+}
+
 h2 {
     color: #2c3e50;
 }
+
 /* HEADER */
 .header {
     text-align: center;
     background: linear-gradient(135deg, #6c8ebf, #9fbfe3);
-    padding: 60px 20px;
+    padding: 100px 20px 60px;
     color: white;
 }
 
@@ -27,13 +51,28 @@ h1 {
 }
     
 .logo {
-  width: 380px;
-  display: block;
-  margin: 0 auto 10px auto;
+  width: 320px;
+  margin: auto;
 }
 
 .logo img {
   width: 100%;
+}
+
+/* BOTÓN HERO */
+.btn-hero {
+    background: #1abc9c;
+    padding: 12px 25px;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.btn-hero:hover {
+    background: #16a085;
 }
 
 /* CONTENIDO */
@@ -55,6 +94,7 @@ h1 {
 .card:hover {
     transform: translateY(-5px);
 }
+
 /* BOTONES */
 button {
     background: linear-gradient(135deg, #1abc9c, #16a085);
@@ -74,8 +114,6 @@ button:hover {
 /* GALERIA */
 .grid-galeria {
     display: grid;
-
-    
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
 }
@@ -91,6 +129,7 @@ button:hover {
 .grid-galeria img:hover {
     transform: scale(1.05);
 }
+
 /* CONTACTO */
 .contacto {
     display: flex;
@@ -102,7 +141,24 @@ button:hover {
     flex: 1;
 }
 
-/* MODAL IMAGEN */
+/* TESTIMONIOS */
+.testimonio {
+    background: #ecf0f1;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* MODAL */
 .modal-img-view {
     display: none;
     position: fixed;
@@ -135,12 +191,23 @@ button:hover {
 
 <body>
 
+<!-- NAVBAR -->
+<nav>
+    <a href="#">Inicio</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+
+<!-- HEADER -->
 <div class="header">
     <div class="logo">
         <img src="Logo1.png">
     </div>
     <h1>Asilo Yolanda</h1>
     <p>Cuidado y bienestar para adultos mayores</p>
+    <a href="#contacto" class="btn-hero">Solicitar información</a>
 </div>
 
 <div class="container">
@@ -150,17 +217,27 @@ button:hover {
     <p>En Asilo Yolanda brindamos cuidado, atención y cariño a nuestros adultos mayores.</p>
 </div>
 
-<div class="card">
+<div class="card" id="nosotros">
     <h2>Nosotros</h2>
-    <p>Somos una institución comprometida con el bienestar de nuestros residentes.</p>
+    <p>Somos una institución comprometida con el bienestar de nuestros residentes, brindando atención integral con amor y respeto.</p>
 
-    <!-- BOTÓN NUEVO -->
     <a href="historia.html">
         <button>Ver Historia</button>
     </a>
 </div>
 
+<!-- NUEVA SECCIÓN -->
 <div class="card">
+    <h2>¿Por qué elegirnos?</h2>
+    <ul>
+        <li>❤️ Atención con calidez humana</li>
+        <li>🕐 Cuidado 24 horas</li>
+        <li>👩‍⚕️ Personal capacitado</li>
+        <li>🏡 Ambiente seguro y familiar</li>
+    </ul>
+</div>
+
+<div class="card" id="servicios">
     <h2>Servicios</h2>
     <ul>
         <li>Atención 24 horas</li>
@@ -170,7 +247,7 @@ button:hover {
     </ul>
 </div>
 
-<div class="card">
+<div class="card" id="galeria">
     <h2>Galería</h2>
     <div class="grid-galeria">
         <img src="asillo1.jpeg" onclick="verImagen(this)">
@@ -182,7 +259,14 @@ button:hover {
     </div>
 </div>
 
-<div class="contacto">
+<!-- TESTIMONIOS -->
+<div class="card">
+    <h2>Testimonios</h2>
+    <div class="testimonio">“Excelente atención y mucho cariño hacia los adultos mayores.”</div>
+    <div class="testimonio">“Un lugar muy tranquilo y confiable.”</div>
+</div>
+
+<div class="contacto" id="contacto">
     <div class="card">
         <h2>Ubicación</h2>
         <iframe src="https://www.google.com/maps?q=Jiutepec+Morelos&output=embed" width="100%" height="250"></iframe>
@@ -193,13 +277,21 @@ button:hover {
         <p>📞 5529506168</p>
         <p>📍 Jiutepec, Morelos Centro</p>
         <p>✉️ asiloyvdsecretaria@gmail.com</p>
-        <button onclick="window.open('https://wa.me/5215529506168')">WhatsApp</button>
+        <button onclick="window.open('https://wa.me/5215529506168')">
+            Enviar mensaje por WhatsApp
+        </button>
     </div>
 </div>
 
 </div>
 
-<!-- MODAL IMAGEN -->
+<!-- FOOTER -->
+<footer>
+    <p>Asilo Yolanda Vargas Dulce A.C.</p>
+    <p>© 2026 Todos los derechos reservados</p>
+</footer>
+
+<!-- MODAL -->
 <div id="modalImagen" class="modal-img-view">
     <span onclick="cerrarImagen()">&times;</span>
     <img id="imagenGrande">
