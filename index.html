@@ -23,13 +23,8 @@ nav {
     top: 0;
     padding: 15px;
     text-align: center;
-    transition: 0.3s;
+    background: #2e7d6b;
     z-index: 1000;
-}
-
-nav.scrolled {
-    background: #2c3e50;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 nav a {
@@ -40,16 +35,13 @@ nav a {
 }
 
 nav a:hover {
-    color: #1abc9c;
+    color: #a7f3d0;
 }
 
 /* HEADER */
 .header {
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
-                url('https://images.unsplash.com/photo-1581579186986-1c5e267e8f5c');
-    background-size: cover;
-    background-position: center;
+    background: linear-gradient(135deg, #2e7d6b, #4db6ac);
     padding: 120px 20px 80px;
     color: white;
 }
@@ -69,7 +61,7 @@ h1 {
 }
 
 .btn-hero {
-    background: #1abc9c;
+    background: linear-gradient(135deg, #2e7d6b, #4db6ac);
     padding: 14px 30px;
     border-radius: 30px;
     color: white;
@@ -93,19 +85,12 @@ h1 {
 
 /* CARDS */
 .card {
-    background: white;
+    background: #ffffff;
     padding: 25px;
     border-radius: 18px;
     margin-bottom: 25px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(46,125,107,0.1);
     transition: 0.4s;
-    opacity: 0;
-    transform: translateY(40px);
-}
-
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .card:hover {
@@ -141,7 +126,7 @@ h1 {
 
 /* TESTIMONIOS */
 .testimonio {
-    background: #f1f3f5;
+    background: #e8f5f2;
     padding: 15px;
     border-radius: 12px;
     margin-bottom: 10px;
@@ -149,7 +134,7 @@ h1 {
 
 /* FOOTER */
 footer {
-    background: #2c3e50;
+    background: #2e7d6b;
     color: white;
     text-align: center;
     padding: 25px;
@@ -160,7 +145,7 @@ footer {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #25D366;
+    background: #2e7d6b;
     color: white;
     padding: 15px 18px;
     border-radius: 50%;
@@ -207,7 +192,7 @@ footer {
 
 <body>
 
-<nav id="navbar">
+<nav>
     <a href="#">Inicio</a>
     <a href="#nosotros">Nosotros</a>
     <a href="#servicios">Servicios</a>
@@ -261,13 +246,16 @@ footer {
         <img src="asillo1.jpeg" onclick="verImagen(this)">
         <img src="asilo2.jpeg" onclick="verImagen(this)">
         <img src="asilo3.jpeg" onclick="verImagen(this)">
+        <img src="foto1.jpeg" onclick="verImagen(this)">
+        <img src="foto2.jpeg" onclick="verImagen(this)">
+        <img src="foto3.jpeg" onclick="verImagen(this)">
     </div>
 </div>
 
 <div class="card">
     <h2>Testimonios</h2>
-    <div class="testimonio">“Excelente atención.”</div>
-    <div class="testimonio">“Muy recomendable.”</div>
+    <div class="testimonio">“Excelente atención y mucho cariño.”</div>
+    <div class="testimonio">“Un lugar muy confiable.”</div>
 </div>
 
 <div class="contacto" id="contacto">
@@ -279,7 +267,7 @@ footer {
     <div class="card">
         <h2>Contacto</h2>
         <p>📞 5529506168</p>
-        <p>📍 Jiutepec, Morelos</p>
+        <p>📍 Jiutepec, Morelos Centro</p>
         <p>✉️ asiloyvdsecretaria@gmail.com</p>
     </div>
 </div>
@@ -288,6 +276,7 @@ footer {
 
 <footer>
     <p>Asilo Yolanda Vargas Dulce A.C.</p>
+    <p>© 2026 Todos los derechos reservados</p>
 </footer>
 
 <a class="whatsapp-float" href="https://wa.me/5215529506168" target="_blank">💬</a>
@@ -298,21 +287,6 @@ footer {
 </div>
 
 <script>
-window.addEventListener("scroll", function() {
-    let nav = document.getElementById("navbar");
-    nav.classList.toggle("scrolled", window.scrollY > 50);
-});
-
-const cards = document.querySelectorAll('.card');
-window.addEventListener('scroll', () => {
-    cards.forEach(card => {
-        const top = card.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            card.classList.add('show');
-        }
-    });
-});
-
 function verImagen(img) {
     document.getElementById("modalImagen").style.display = "flex";
     document.getElementById("imagenGrande").src = img.src;
