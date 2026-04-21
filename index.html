@@ -6,82 +6,81 @@
 <title>Asilo Yolanda</title>
 
 <style>
-body{
-    margin:0;
+body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background:#f4f6f9;
+    background: #f5f7fa;
+    text-align: center;
 }
 
-/* HEADER */
-.header{
-    text-align:center;
-    background: linear-gradient(135deg,#60a5fa,#93c5fd,#bfdbfe);
-    padding:40px 20px;
+/* LOGO GRANDE */
+.logo {
+    margin-top: 20px;
 }
-
-.logo{
-    width:300px;
-    max-width:90%;
+.logo img {
+    width: 300px;
 }
 
 /* MENÚ */
-.menu{
-    background:#5b8fd9;
-    padding:15px;
-    text-align:center;
+nav {
+    background: #6da3e6;
+    padding: 15px;
 }
-
-.menu a{
-    color:white;
-    text-decoration:none;
-    margin:0 15px;
-    font-weight:bold;
-}
-
-.menu a:hover{
-    text-decoration:underline;
+nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 /* BOTÓN */
-.btn{
-    display:inline-block;
-    background:white;
-    color:#5b8fd9;
-    padding:12px 25px;
-    border-radius:25px;
-    margin-top:15px;
-    text-decoration:none;
-    font-weight:bold;
+.btn {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #6da3e6;
+    font-weight: bold;
 }
 
-/* CONTENIDO */
-.container{
-    padding:30px;
+/* SECCIONES */
+.container {
+    width: 80%;
+    margin: auto;
 }
 
-.card{
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    margin-bottom:20px;
-    box-shadow:0px 4px 10px rgba(0,0,0,0.1);
+.card {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+}
+
+/* GALERÍA */
+.galeria img {
+    width: 200px;
+    margin: 10px;
+    border-radius: 10px;
 }
 </style>
-
 </head>
 
 <body>
 
 <!-- LOGO GRANDE -->
-<header class="header">
-    <img src="logo.png" class="logo">
-    <h1>Asilo Yolanda</h1>
-    <p>Cuidado con amor y dignidad</p>
-    <a href="#contacto" class="btn">Solicitar información</a>
-</header>
+<div class="logo">
+    <img src="logo.png">
+</div>
+
+<h1>Asilo Yolanda</h1>
+<p>Cuidado con amor y dignidad</p>
+
+<a href="#" class="btn">Solicitar información</a>
 
 <!-- MENÚ -->
-<nav class="menu">
+<nav>
     <a href="index.html">Inicio</a>
     <a href="historia.html">Historia</a>
     <a href="mision.html">Misión</a>
@@ -91,7 +90,6 @@ body{
     <a href="#contacto">Contacto</a>
 </nav>
 
-<!-- CONTENIDO -->
 <div class="container">
 
     <div class="card">
@@ -107,31 +105,36 @@ body{
 
     <div class="card">
         <h2>¿Por qué elegirnos?</h2>
-        <ul>
+        <ul style="text-align:left;">
             <li>❤️ Atención humana</li>
             <li>⏰ 24 horas</li>
             <li>👩‍⚕️ Personal capacitado</li>
-            <li>🏡 Ambiente familiar</li>
+            <li>🏠 Ambiente familiar</li>
         </ul>
     </div>
 
-    <!-- GALERÍA -->
-    <div class="card" id="galeria">
-        <h2>Galería</h2>
-        <img src="foto1.jpeg" width="30%">
-        <img src="foto2.jpeg" width="30%">
-        <img src="foto3.jpeg" width="30%">
-        <img src="asillo1.jpeg" width="30%">
-        <img src="asilo2.jpeg" width="30%">
-        <img src="asilo3.jpeg" width="30%">
-        
+    <div class="card" id="servicios">
+        <h2>Servicios</h2>
+        <p>Atención médica, alimentación, actividades recreativas y acompañamiento.</p>
     </div>
 
-    <!-- CONTACTO -->
+    <!-- GALERÍA RESTAURADA -->
+    <div class="card" id="galeria">
+        <h2>Galería</h2>
+        <div class="galeria">
+            <img src="asillo1.jpeg">
+            <img src="asilo2.jpeg">
+            <img src="asilo3.jpeg">
+            <img src="foto1.jpeg">
+            <img src="foto2.jpeg">
+            <img src="foto3.jpeg">
+        </div>
+    </div>
+
     <div class="card" id="contacto">
         <h2>Contacto</h2>
-        <p>📍 Dirección: (agrega aquí)</p>
-        <p>📞 Teléfono: (agrega aquí)</p>
+        <p>Dirección: Tu dirección aquí</p>
+        <p>Teléfono: Tu teléfono aquí</p>
     </div>
 
 </div>
