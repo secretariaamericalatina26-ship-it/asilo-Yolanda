@@ -1,140 +1,163 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asilo Yolanda</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asilo Yolanda</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #eef2f7;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #eef2f7;
+}
 
-        /* MENÚ */
-        .menu {
-            background: #60a5fa;
-            padding: 15px;
-            text-align: center;
-        }
+/* MENÚ */
+.menu {
+    background: #60a5fa;
+    padding: 15px;
+    text-align: center;
+}
 
-        .menu a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: 600;
-        }
+.menu a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+}
 
-        .menu a:hover {
-            color: #e0f2fe;
-        }
+.menu a:hover {
+    color: #e0f2fe;
+}
 
-        /* HEADER */
-        .header {
-            text-align: center;
-            background: linear-gradient(135deg, #60a5fa, #93c5fd, #bfdbfe);
-            padding: 60px 20px;
-        }
+/* HEADER */
+.header {
+    text-align: center;
+    background: linear-gradient(135deg, #60a5fa, #93c5fd, #bfdbfe);
+    padding: 80px 20px;
+}
 
-        .logo {
-            width: 400px;
-            margin: 20px auto;
-        }
+/* LOGO */
+.logo {
+    width: 380px;
+    margin: 0 auto 20px;
+}
 
-        .logo img {
-            width: 100%;
-        }
+.logo img {
+    width: 100%;
+    border-radius: 10px;
+}
 
-        h1 {
-            font-size: 32px;
-            margin: 10px 0;
-        }
+/* TEXTO */
+h1 {
+    font-size: 36px;
+    margin: 10px 0;
+    color: #1e293b;
+}
 
-        p {
-            color: #334155;
-        }
+.subtitle {
+    color: #475569;
+    font-size: 16px;
+}
 
-        /* BOTÓN */
-        .btn-hero {
-            display: inline-block;
-            margin-top: 20px;
-            background: white;
-            color: #60a5fa;
-            padding: 12px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+/* BOTÓN */
+.btn-hero {
+    display: inline-block;
+    margin-top: 25px;
+    background: white;
+    color: #60a5fa;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
 
-        /* CONTENIDO */
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 20px;
-        }
+.btn-hero:hover {
+    background: #f1f5f9;
+}
 
-        .card {
-            background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-    </style>
+/* CONTENIDO */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+/* LISTA */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+</style>
 </head>
 
 <body>
 
-    <!-- MENÚ -->
-    <nav class="menu">
-        <a href="index.html">Inicio</a>
-        <a href="historia.html">Historia</a>
-        <a href="mision.html">Misión</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#galeria">Galería</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
+<!-- MENÚ -->
+<nav class="menu">
+    <a href="index.html">Inicio</a>
+    <a href="historia.html">Historia</a>
+    <a href="mision.html">Misión</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+</nav>
 
-    <!-- HEADER -->
-    <header class="header">
+<!-- HEADER -->
+<header class="header">
 
-        <div class="logo">
-            <img src="logo.png" alt="Logo">
-        </div>
-
-        <h1>Asilo Yolanda</h1>
-        <p>Cuidado con amor y dignidad</p>
-
-        <a href="#" class="btn-hero">Solicitar información</a>
-
-    </header>
-
-    <!-- CONTENIDO -->
-    <div class="container">
-
-        <div class="card">
-            <h2>Bienvenidos</h2>
-            <p>Brindamos cuidado, atención y cariño a nuestros adultos mayores.</p>
-        </div>
-
-        <div class="card" id="nosotros">
-            <h2>Nosotros</h2>
-            <p>Institución comprometida con el bienestar integral de nuestros residentes.</p>
-        </div>
-
-        <div class="card">
-            <h2>¿Por qué elegirnos?</h2>
-            <ul>
-                <li>❤️ Atención humana</li>
-                <li>⏰ 24 horas</li>
-                <li>👩‍⚕️ Personal capacitado</li>
-                <li>🏡 Ambiente familiar</li>
-            </ul>
-        </div>
-
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
     </div>
+
+    <h1>Asilo Yolanda</h1>
+    <p class="subtitle">Cuidado con amor y dignidad</p>
+
+    <a href="#" class="btn-hero">Solicitar información</a>
+
+</header>
+
+<!-- CONTENIDO -->
+<div class="container">
+
+    <div class="card">
+        <h2>Bienvenidos</h2>
+        <p>Brindamos cuidado, atención y cariño a nuestros adultos mayores.</p>
+    </div>
+
+    <div class="card" id="nosotros">
+        <h2>Nosotros</h2>
+        <p>Institución comprometida con el bienestar integral de nuestros residentes.</p>
+    </div>
+
+    <div class="card">
+        <h2>¿Por qué elegirnos?</h2>
+        <ul>
+            <li>❤️ Atención humana</li>
+            <li>⏰ 24 horas</li>
+            <li>👩‍⚕️ Personal capacitado</li>
+            <li>🏡 Ambiente familiar</li>
+        </ul>
+    </div>
+
+</div>
 
 </body>
 </html>
