@@ -22,96 +22,40 @@ body {
 /* CONTENEDOR */
 .container {
     max-width: 900px;
-    margin: auto;
-    padding: 25px;
-}
-
-/* TARJETA */
-.card {
+    margin: 40px auto;
     background: white;
     padding: 30px;
-    border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    line-height: 1.6;
 }
 
-/* IMAGEN */
-img {
-    width: 100%;
-    border-radius: 15px;
-    margin-bottom: 20px;
+/* BOTÓN MISIÓN */
+.btn-mision {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #6c8ebf;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-/* TEXTO */
-p {
-    line-height: 1.8;
-    text-align: justify;
-    margin-bottom: 15px;
+.btn-mision:hover {
+    background-color: #4e6fa3;
 }
 
 /* BOTÓN REGRESAR */
-.btn {
+.btn-regresar {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 22px;
-    background: #1abc9c;
-    color: white;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.btn:hover {
-    background: #16a085;
-}
-
-/* ACORDEÓN */
-details {
-    margin-top: 25px;
-    border-radius: 12px;
-    background: #f4f7ff;
     padding: 10px 15px;
-    transition: 0.3s;
-}
-
-summary {
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 18px;
-    color: #2a4d9b;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Quitar flecha default */
-summary::-webkit-details-marker {
-    display: none;
-}
-
-/* Icono + */
-summary::after {
-    content: "+";
-    font-size: 22px;
-    transition: 0.3s;
-}
-
-/* Icono - cuando está abierto */
-details[open] summary::after {
-    content: "−";
-}
-
-/* Animación contenido */
-details p {
-    margin-top: 15px;
-    animation: fadeIn 0.4s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(-5px);}
-    to {opacity: 1; transform: translateY(0);}
+    background-color: #4e6fa3;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
 }
 </style>
+
 </head>
 
 <body>
@@ -121,9 +65,6 @@ details p {
 </div>
 
 <div class="container">
-<div class="card">
-
-<img src="foto2.jpeg" alt="Asilo Yolanda">
 
 <p><strong>El Asilo Yolanda Vargas Dulché</strong> nace del amor, la fe y el profundo deseo de servir a quienes más lo necesitan.</p>
 
@@ -141,37 +82,20 @@ details p {
 
 <p><strong>El Asilo Yolanda Vargas Dulché nació con el propósito de ofrecer un hogar donde el respeto, el cuidado y el acompañamiento sean una realidad diaria.</strong></p>
 
-<p><strong>Inspirado en el carisma y la misión de las Hermanas Auxiliadoras del Purgatorio, congregación a la que pertenece la Hermana Ángela Morán, este proyecto continúa creciendo con la misma misión con la que comenzó: brindar esperanza, dignidad y cariño a nuestros adultos mayores.</strong></p>
+<p><strong>Inspirado en el carisma y la misión de las Hermanas Auxiliadoras del Purgatorio, este proyecto continúa creciendo con la misma misión con la que comenzó: brindar esperanza, dignidad y cariño a nuestros adultos mayores.</strong></p>
 
-<!-- MISIÓN -->
-<details>
-  <summary>Misión de las Hermanas Auxiliadoras</summary>
+<br>
 
-  <p>
-    El carisma puede entenderse como un don que Dios confía a una comunidad, como semillas que se reciben con responsabilidad para ser cultivadas y compartidas, generando vida, esperanza y servicio en favor de los demás.
-  </p>
-
-  <p>
-    Inspiradas por María de la Providencia, las Hermanas Auxiliadoras viven su misión acompañando a quienes se encuentran en situaciones de mayor vulnerabilidad, especialmente a aquellos que han sido olvidados o relegados por la sociedad.
-  </p>
-
-  <p>
-    Desde esta mirada, cada persona es reconocida con dignidad, con un rostro y una historia única, más allá de cualquier condición o circunstancia.
-  </p>
-
-  <p>
-    La misión también abraza la dimensión espiritual, reconociendo a todos como parte de una misma familia en Dios, en camino de crecimiento y plenitud como hijos e hijas suyos.
-  </p>
-
-  <p>
-    Así, en medio de las dificultades y esperanzas de la vida, las Hermanas Auxiliadoras caminan junto a las personas, ofreciendo oración, acompañamiento y servicio, construyendo comunidad desde la fe, la solidaridad y el amor.
-  </p>
-
-</details>
-
-<a href="index.html" class="btn">← Regresar</a>
-
+<!-- BOTÓN MISIÓN -->
+<div style="text-align: center;">
+    <a href="mision.html" class="btn-mision">Misión de las Hermanas Auxiliadoras</a>
 </div>
+
+<br><br>
+
+<!-- BOTÓN REGRESAR -->
+<a href="index.html" class="btn-regresar">← Regresar</a>
+
 </div>
 
 </body>
