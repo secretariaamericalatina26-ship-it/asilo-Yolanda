@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <title>Misión de las Hermanas Auxiliadoras</title>
@@ -11,135 +12,65 @@ body {
     background-color: #eef2f7;
 }
 
-/* IMAGEN CON TÍTULO */
-.header-imagen {
-    position: relative;
+/* MENÚ */
+.menu {
+    background: #4e6fa3;
+    padding: 15px;
+    text-align: center;
 }
 
-.header-imagen img {
+.menu a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* IMAGEN */
+.header-image img {
     width: 100%;
     height: 320px;
     object-fit: cover;
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.45);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.overlay h1 {
-    color: white;
-    font-size: 34px;
-    text-align: center;
-    padding: 0 20px;
-}
-
-/* CONTENEDOR */
+/* CONTENIDO */
 .container {
     max-width: 850px;
-    margin: -50px auto 50px;
+    margin: -40px auto 50px;
     background: white;
-    padding: 45px;
-    border-radius: 18px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-}
-
-/* TEXTO */
-p {
-    line-height: 1.8;
-    color: #444;
-    font-size: 16px;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-/* TEXTO DESTACADO */
-.destacado {
-    font-style: italic;
-    color: #4e6fa3;
-    font-weight: 500;
-    margin-bottom: 25px;
-}
-
-/* BOTÓN */
-.boton {
-    display: inline-block;
-    padding: 12px 28px;
-    background: #6c8ebf;
-    color: white;
-    text-decoration: none;
+    padding: 30px;
     border-radius: 12px;
-    font-weight: bold;
-    transition: all 0.3s ease;
 }
 
-.boton:hover {
-    background: #4e6fa3;
-    transform: translateY(-2px);
-}
-
-.center {
+h1 {
     text-align: center;
-    margin-top: 35px;
+    color: #4e6fa3;
 }
-</style>
 
+</style>
 </head>
 
 <body>
 
-<!-- IMAGEN CON TÍTULO -->
-<div class="header-imagen">
+<!-- MENÚ -->
+<div class="menu">
+    <a href="index.html">Inicio</a>
+    <a href="historia.html">Historia</a>
+    <a href="mision.html">Misión</a>
+</div>
+
+<!-- IMAGEN -->
+<div class="header-image">
     <img src="foto4.jpg" alt="Hermanas Auxiliadoras">
-    <div class="overlay">
-        <h1>Misión de las Hermanas Auxiliadoras</h1>
-    </div>
 </div>
 
 <!-- CONTENIDO -->
 <div class="container">
+    <h1>Misión de las Hermanas Auxiliadoras</h1>
 
-    <p class="destacado">
+    <p>
         Un camino de fe, servicio y amor que busca acompañar con dignidad a quienes más lo necesitan.
     </p>
-
-    <p>
-        El carisma de las Hermanas Auxiliadoras es un don recibido de Dios que se acoge con responsabilidad 
-        y se traduce en servicio, esperanza y entrega a los demás. Este don inspira una vida dedicada a hacer 
-        presente el amor de Dios en la vida cotidiana.
-    </p>
-
-    <p>
-        Fieles al espíritu de su fundadora, María de la Providencia, las Hermanas Auxiliadoras orientan su misión 
-        hacia el acompañamiento cercano de las personas, especialmente de aquellas que viven en situaciones de 
-        mayor vulnerabilidad.
-    </p>
-
-    <p>
-        Desde esta mirada, cada persona es reconocida en su dignidad, como única e irrepetible, portadora de una 
-        historia que merece ser acogida, escuchada y valorada.
-    </p>
-
-    <p>
-        La misión se realiza a través de la cercanía, la escucha y el servicio, expresados en acciones concretas 
-        como el acompañamiento personal, la oración, la formación en la fe y el trabajo comunitario.
-    </p>
-
-    <p>
-        Así, las Hermanas Auxiliadoras caminan junto a las personas, construyendo comunidad desde la fe, la 
-        solidaridad y el amor, promoviendo espacios donde cada vida pueda encontrar esperanza, sentido y dignidad.
-    </p>
-
-    <div class="center">
-        <a href="historia.html" class="boton">← Regresar</a>
-    </div>
 
 </div>
 
