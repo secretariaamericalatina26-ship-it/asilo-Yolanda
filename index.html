@@ -1,336 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Asilo Yolanda</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asilo Yolanda</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #eef2f7;
+        }
 
-<style>
-html {
-    scroll-behavior: smooth;
-}
+        /* MENÚ */
+        .menu {
+            background: #60a5fa;
+            padding: 15px;
+            text-align: center;
+        }
 
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #f8fbff;
-}
+        .menu a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-/* NAVBAR */
-nav {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    padding: 15px;
-    text-align: center;
-    transition: 0.3s;
-    z-index: 1000;
-    background: #60a5fa;
-}
+        .menu a:hover {
+            color: #e0f2fe;
+        }
 
-nav.scrolled {
-    background: #60a5fa;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-}
+        /* HEADER */
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, #60a5fa, #93c5fd, #bfdbfe);
+            padding: 60px 20px;
+        }
 
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 600;
-}
+        .logo {
+            width: 400px;
+            margin: 20px auto;
+        }
 
-nav a:hover {
-    color: #e0f2fe;
-}
+        .logo img {
+            width: 100%;
+        }
 
-/* HEADER */
-.header {
-    text-align: center;
-    background: linear-gradient(135deg, #60a5fa, #93c5fd, #bfdbfe);
-    padding: 60px 20px 40px;
-}
-.logo {
-    width: 350px;
-    margin: 20px auto;
-}
+        h1 {
+            font-size: 32px;
+            margin: 10px 0;
+        }
 
-.logo img {
-    width: 100%;
-}
-h1 {
-    font-size: 32px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
+        p {
+            color: #334155;
+        }
 
-h2 {
-    font-weight: 600;
-}
+        /* BOTÓN */
+        .btn-hero {
+            display: inline-block;
+            margin-top: 20px;
+            background: white;
+            color: #60a5fa;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-p {
-    color: #334155;
-    line-height: 1.6;
-}
+        /* CONTENIDO */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+        }
 
-/* BOTÓN */
-.btn-hero {
-    background: #ffffff;
-    color: #60a5fa;
-    padding: 14px 30px;
-    border-radius: 30px;
-    font-weight: 600;
-    text-decoration: none;
-    margin-top: 20px;
-    display: inline-block;
-    transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.btn-hero:hover {
-    background: #eff6ff;
-    transform: scale(1.05);
-}
-
-/* CONTENEDOR */
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
-}
-
-/* CARDS */
-.card {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 18px;
-    margin-bottom: 25px;
-    box-shadow: 0 10px 25px rgba(96,165,250,0.1);
-    transition: 0.4s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-}
-
-/* GALERÍA */
-.grid-galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-}
-
-.grid-galeria img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.grid-galeria img:hover {
-    transform: scale(1.07);
-}
-
-/* CONTACTO */
-.contacto {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-/* TESTIMONIOS */
-.testimonio {
-    background: #e0f2fe;
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 10px;
-}
-
-/* FOOTER */
-footer {
-    background: #60a5fa;
-    color: white;
-    text-align: center;
-    padding: 25px;
-}
-
-/* WHATSAPP */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #60a5fa;
-    color: white;
-    padding: 15px 18px;
-    border-radius: 50%;
-    font-size: 22px;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1);
-}
-
-/* MODAL */
-.modal-img-view {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-img-view img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 15px;
-}
-
-.modal-img-view span {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-}
-</style>
+        .card {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+    </style>
 </head>
 
 <body>
-<nav class="menu">
-    <div class="nav-container">
 
-        <img src="logo.png" class="logo-nav">
+    <!-- MENÚ -->
+    <nav class="menu">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="mision.html">Misión</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
 
-        <div class="nav-links">
-            <a href="index.html">Inicio</a>
-            <a href="historia.html">Historia</a>
-            <a href="mision.html">Misión</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#galeria">Galería</a>
-            <a href="#contacto">Contacto</a>
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+
+        <h1>Asilo Yolanda</h1>
+        <p>Cuidado con amor y dignidad</p>
+
+        <a href="#" class="btn-hero">Solicitar información</a>
+
+    </header>
+
+    <!-- CONTENIDO -->
+    <div class="container">
+
+        <div class="card">
+            <h2>Bienvenidos</h2>
+            <p>Brindamos cuidado, atención y cariño a nuestros adultos mayores.</p>
+        </div>
+
+        <div class="card" id="nosotros">
+            <h2>Nosotros</h2>
+            <p>Institución comprometida con el bienestar integral de nuestros residentes.</p>
+        </div>
+
+        <div class="card">
+            <h2>¿Por qué elegirnos?</h2>
+            <ul>
+                <li>❤️ Atención humana</li>
+                <li>⏰ 24 horas</li>
+                <li>👩‍⚕️ Personal capacitado</li>
+                <li>🏡 Ambiente familiar</li>
+            </ul>
         </div>
 
     </div>
-</nav>
-
-<header class="header">
-
-    <div class="logo">
-        <img src="logo.png" alt="Logo">
-    </div>
-
-    <h1>Asilo Yolanda</h1>
-    <p>Cuidado con amor y dignidad</p>
-
-    <a href="#" class="btn-hero">Solicitar información</a>
-
-</header>
-<div class="container">
-
-<div class="card">
-    <h2>Bienvenidos</h2>
-    <p>Brindamos cuidado, atención y cariño a nuestros adultos mayores.</p>
-</div>
-
-<div class="card" id="nosotros">
-    <h2>Nosotros</h2>
-    <p>Institución comprometida con el bienestar integral de nuestros residentes.</p>
-    <a href="historia.html" class="btn-hero">Ver Historia</a>
-</div>
-
-<div class="card">
-    <h2>¿Por qué elegirnos?</h2>
-    <ul>
-        <li>❤️ Atención humana</li>
-        <li>🕐 24 horas</li>
-        <li>👩‍⚕️ Personal capacitado</li>
-        <li>🏡 Ambiente familiar</li>
-    </ul>
-</div>
-
-<div class="card" id="servicios">
-    <h2>Servicios</h2>
-    <ul>
-        <li>Atención 24 horas</li>
-        <li>Alimentación balanceada</li>
-        <li>Actividades recreativas</li>
-    </ul>
-</div>
-
-<div class="card" id="galeria">
-    <h2>Galería</h2>
-    <div class="grid-galeria">
-        <img src="asillo1.jpeg" onclick="verImagen(this)">
-        <img src="asilo2.jpeg" onclick="verImagen(this)">
-        <img src="asilo3.jpeg" onclick="verImagen(this)">
-        <img src="foto1.jpeg" onclick="verImagen(this)">
-        <img src="foto2.jpeg" onclick="verImagen(this)">
-        <img src="foto3.jpeg" onclick="verImagen(this)">
-    </div>
-</div>
-
-<div class="card">
-    <h2>Testimonios</h2>
-    <div class="testimonio">“Excelente atención y mucho cariño.”</div>
-    <div class="testimonio">“Un lugar muy confiable.”</div>
-</div>
-
-<div class="contacto" id="contacto">
-    <div class="card">
-        <h2>Ubicación</h2>
-        <iframe src="https://www.google.com/maps?q=Jiutepec+Morelos&output=embed" width="100%" height="250"></iframe>
-    </div>
-
-    <div class="card">
-        <h2>Contacto</h2>
-        <p>📞 5529506168</p>
-        <p>📍 Jiutepec, Morelos Centro</p>
-        <p>✉️ asiloyvdsecretaria@gmail.com</p>
-    </div>
-</div>
-
-</div>
-
-<footer>
-    <p>Asilo Yolanda Vargas Dulce A.C.</p>
-    <p>© 2026 Todos los derechos reservados</p>
-</footer>
-
-<a class="whatsapp-float" href="https://wa.me/5215529506168" target="_blank">💬</a>
-
-<div id="modalImagen" class="modal-img-view">
-    <span onclick="cerrarImagen()">&times;</span>
-    <img id="imagenGrande">
-</div>
-
-<script>
-window.addEventListener("scroll", function() {
-    let nav = document.getElementById("navbar");
-    nav.classList.toggle("scrolled", window.scrollY > 50);
-});
-
-function verImagen(img) {
-    document.getElementById("modalImagen").style.display = "flex";
-    document.getElementById("imagenGrande").src = img.src;
-}
-
-function cerrarImagen() {
-    document.getElementById("modalImagen").style.display = "none";
-}
-</script>
 
 </body>
 </html>
