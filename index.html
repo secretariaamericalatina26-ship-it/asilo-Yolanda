@@ -2,142 +2,311 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Asilo Yolanda</title>
 
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fa;
-    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    background: #eef2f7;
 }
 
-/* LOGO GRANDE */
-.logo {
-    margin-top: 20px;
-}
-.logo img {
-    width: 300px;
-}
-
-/* MENÚ */
+/* NAVBAR */
 nav {
-    background: #6da3e6;
-    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #2c3e50;
+    padding: 10px;
+    text-align: center;
+    z-index: 1000;
 }
+
 nav a {
     color: white;
-    margin: 10px;
+    margin: 0 15px;
     text-decoration: none;
     font-weight: bold;
 }
 
-/* BOTÓN */
-.btn {
+nav a:hover {
+    color: #1abc9c;
+}
+
+h2 {
+    color: #2c3e50;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    background: linear-gradient(135deg, #6c8ebf, #9fbfe3);
+    padding: 100px 20px 60px;
+    color: white;
+}
+
+h1 {
+  font-size: 38px;
+  margin-top: 10px;
+}
+    
+.logo {
+  width: 320px;
+  margin: auto;
+}
+
+.logo img {
+  width: 100%;
+}
+
+/* BOTÓN HERO */
+.btn-hero {
+    background: #1abc9c;
+    padding: 12px 25px;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
     display: inline-block;
-    margin: 20px;
-    padding: 10px 20px;
-    background: white;
-    border-radius: 20px;
-    text-decoration: none;
-    color: #6da3e6;
+    margin-top: 15px;
     font-weight: bold;
 }
 
-/* SECCIONES */
+.btn-hero:hover {
+    background: #16a085;
+}
+
+/* CONTENIDO */
 .container {
-    width: 80%;
+    max-width: 900px;
     margin: auto;
+    padding: 20px;
 }
 
 .card {
     background: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* BOTONES */
+button {
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* GALERIA */
+.grid-galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.grid-galeria img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.grid-galeria img:hover {
+    transform: scale(1.05);
+}
+
+/* CONTACTO */
+.contacto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contacto .card {
+    flex: 1;
+}
+
+/* TESTIMONIOS */
+.testimonio {
+    background: #ecf0f1;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
     padding: 20px;
-    margin: 20px 0;
+    margin-top: 30px;
+}
+
+/* MODAL */
+.modal-img-view {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-img-view img {
+    max-width: 90%;
+    max-height: 80%;
     border-radius: 15px;
 }
 
-/* GALERÍA */
-.galeria img {
-    width: 200px;
-    margin: 10px;
-    border-radius: 10px;
+.modal-img-view span {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
 }
 </style>
 </head>
 
 <body>
 
-<!-- LOGO GRANDE -->
-<div class="logo">
-    <img src="logo.png">
-</div>
-
-<h1>Asilo Yolanda</h1>
-<p>Cuidado con amor y dignidad</p>
-
-<a href="#" class="btn">Solicitar información</a>
-
-<!-- MENÚ -->
+<!-- NAVBAR -->
 <nav>
-    <a href="index.html">Inicio</a>
-    <a href="historia.html">Historia</a>
-    <a href="mision.html">Misión</a>
+    <a href="#">Inicio</a>
     <a href="#nosotros">Nosotros</a>
     <a href="#servicios">Servicios</a>
     <a href="#galeria">Galería</a>
     <a href="#contacto">Contacto</a>
 </nav>
 
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">
+        <img src="Logo1.png">
+    </div>
+    <h1>Asilo Yolanda</h1>
+    <p>Cuidado y bienestar para adultos mayores</p>
+    <a href="#contacto" class="btn-hero">Solicitar información</a>
+</div>
+
 <div class="container">
 
+<div class="card">
+    <h2>Bienvenidos</h2>
+    <p>En Asilo Yolanda brindamos cuidado, atención y cariño a nuestros adultos mayores.</p>
+</div>
+
+<div class="card" id="nosotros">
+    <h2>Nosotros</h2>
+    <p>Somos una institución comprometida con el bienestar de nuestros residentes, brindando atención integral con amor y respeto.</p>
+
+    <a href="historia.html">
+        <button>Ver Historia</button>
+    </a>
+</div>
+
+<!-- NUEVA SECCIÓN -->
+<div class="card">
+    <h2>¿Por qué elegirnos?</h2>
+    <ul>
+        <li>❤️ Atención con calidez humana</li>
+        <li>🕐 Cuidado 24 horas</li>
+        <li>👩‍⚕️ Personal capacitado</li>
+        <li>🏡 Ambiente seguro y familiar</li>
+    </ul>
+</div>
+
+<div class="card" id="servicios">
+    <h2>Servicios</h2>
+    <ul>
+        <li>Atención 24 horas</li>
+        <li>Alimentación balanceada</li>
+        <li>Actividades recreativas</li>
+        <li>Cuidado y acompañamiento con calidez</li>
+    </ul>
+</div>
+
+<div class="card" id="galeria">
+    <h2>Galería</h2>
+    <div class="grid-galeria">
+        <img src="asillo1.jpeg" onclick="verImagen(this)">
+        <img src="asilo2.jpeg" onclick="verImagen(this)">
+        <img src="asilo3.jpeg" onclick="verImagen(this)">
+        <img src="foto1.jpeg" onclick="verImagen(this)">
+        <img src="foto2.jpeg" onclick="verImagen(this)">
+        <img src="foto3.jpeg" onclick="verImagen(this)">
+    </div>
+</div>
+
+<!-- TESTIMONIOS -->
+<div class="card">
+    <h2>Testimonios</h2>
+    <div class="testimonio">“Excelente atención y mucho cariño hacia los adultos mayores.”</div>
+    <div class="testimonio">“Un lugar muy tranquilo y confiable.”</div>
+</div>
+
+<div class="contacto" id="contacto">
     <div class="card">
-        <h2>Bienvenidos</h2>
-        <p>Brindamos cuidado, atención y cariño a nuestros adultos mayores.</p>
-    </div>
-
-    <div class="card" id="nosotros">
-        <h2>Nosotros</h2>
-        <p>Institución comprometida con el bienestar integral de nuestros residentes.</p>
-        <a href="historia.html" class="btn">Ver Historia</a>
+        <h2>Ubicación</h2>
+        <iframe src="https://www.google.com/maps?q=Jiutepec+Morelos&output=embed" width="100%" height="250"></iframe>
     </div>
 
     <div class="card">
-        <h2>¿Por qué elegirnos?</h2>
-        <ul style="text-align:left;">
-            <li>❤️ Atención humana</li>
-            <li>⏰ 24 horas</li>
-            <li>👩‍⚕️ Personal capacitado</li>
-            <li>🏠 Ambiente familiar</li>
-        </ul>
-    </div>
-
-    <div class="card" id="servicios">
-        <h2>Servicios</h2>
-        <p>Atención médica, alimentación, actividades recreativas y acompañamiento.</p>
-    </div>
-
-    <!-- GALERÍA RESTAURADA -->
-    <div class="card" id="galeria">
-        <h2>Galería</h2>
-        <div class="galeria">
-            <img src="asillo1.jpeg">
-            <img src="asilo2.jpeg">
-            <img src="asilo3.jpeg">
-            <img src="foto1.jpeg">
-            <img src="foto2.jpeg">
-            <img src="foto3.jpeg">
-        </div>
-    </div>
-
-    <div class="card" id="contacto">
         <h2>Contacto</h2>
-        <p>Dirección: Tu dirección aquí</p>
-        <p>Teléfono: Tu teléfono aquí</p>
+        <p>📞 5529506168</p>
+        <p>📍 Jiutepec, Morelos Centro</p>
+        <p>✉️ asiloyvdsecretaria@gmail.com</p>
+        <button onclick="window.open('https://wa.me/5215529506168')">
+            Enviar mensaje por WhatsApp
+        </button>
     </div>
+</div>
 
 </div>
+
+<!-- FOOTER -->
+<footer>
+    <p>Asilo Yolanda Vargas Dulce A.C.</p>
+    <p>© 2026 Todos los derechos reservados</p>
+</footer>
+
+<!-- MODAL -->
+<div id="modalImagen" class="modal-img-view">
+    <span onclick="cerrarImagen()">&times;</span>
+    <img id="imagenGrande">
+</div>
+
+<script>
+function verImagen(img) {
+    document.getElementById("modalImagen").style.display = "flex";
+    document.getElementById("imagenGrande").src = img.src;
+}
+
+function cerrarImagen() {
+    document.getElementById("modalImagen").style.display = "none";
+}
+</script>
 
 </body>
 </html>
